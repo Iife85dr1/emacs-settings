@@ -1,0 +1,27 @@
+(use-package rustic
+ :mode ("\\.rs$" . rustic-mode)
+ :commands rustic-run-cargo-command rustic-cargo-outdated
+ :ensure t
+ :config
+
+ ;; cargo build
+ (my-local-leader-build-def
+  :states 'normal
+  :keymaps 'rustic-mode-map
+  :desc  "cargo build" "b" 'rustic-cargo-build
+  "r" 'rustic-cargo-run
+  "c" 'rustic-cargo-clean
+  "C" 'rustic-cargo-clippy
+  "f" 'rustic-cargo-fmt
+  "a" 'rustic-cargo-test
+  )
+ (my-local-leader-build-def 'normal rustic-mode-map
+  "b" 'rustic-cargo-build
+  "r" 'rustic-cargo-run
+  "c" 'rustic-cargo-clean
+  "C" 'rustic-cargo-clippy
+  "f" 'rustic-cargo-fmt
+  "a" 'rustic-cargo-test
+
+  )
+)
