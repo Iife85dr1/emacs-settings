@@ -122,7 +122,7 @@
         dashboard-set-navigator t)
 
   (setq dashboard-items '((recents  . 5)
-                        (projects . 5)
+                        (projects . 10)
                         (agenda . 5)
                         (bookmarks . 5)
                         (registers . 5)))
