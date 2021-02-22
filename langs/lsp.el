@@ -127,3 +127,8 @@
   :hook (python-mode . (lambda ()
                           (require 'lsp-python-ms)
                           (lsp))))  ; or lsp-deferred
+
+(use-package cmake-mode
+  :ensure t
+  :config
+  (cmake-mode))
