@@ -1,5 +1,9 @@
 (use-package counsel
-  :ensure t)
+  :ensure t
+  :after ivy
+  :config
+  (setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
+  (counsel-mode))
 
 (use-package ivy
  :ensure t
