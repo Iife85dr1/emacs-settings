@@ -1,3 +1,6 @@
+(use-package counsel
+  :ensure t)
+
 (use-package ivy
  :ensure t
  :bind (("C-x b" . ivy-switch-buffer)
