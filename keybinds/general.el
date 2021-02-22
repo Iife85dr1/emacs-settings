@@ -22,7 +22,7 @@
   ;; ** Global Keybindings
     "p" '(:keymap  projectile-command-map :wk "projectile")
     "g" 'magit-status
-    "." 'treemacs
+    "." 'find-file
     "," 'ivy-switch-buffer
     "a" 'org-agenda
 
