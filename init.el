@@ -105,6 +105,14 @@
  :ensure t
  :hook (after-init . doom-modeline-mode))
 
+;; History in M-x
+(use-package smex
+  :ensure t
+  :after counsel
+  :config
+  (smex-initialize))
+
+
 (use-package dashboard
   :ensure t
   :config
