@@ -10,6 +10,9 @@
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (python-mode . lsp)
          (c++-mode . lsp)
+         (vue-mode . lsp)
+         (web-mode . lsp)
+         (rustic-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :config
@@ -25,6 +28,8 @@
   :config
   (setq lsp-ui-sideline-show-diagnostics t
         lsp-ui-sideline-show-code-actions t
+        lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-sideline-show-code-actions nil
 
         lsp-ui-doc-enable nil
         lsp-ui-doc-delay 0
