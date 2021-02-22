@@ -19,26 +19,20 @@
   (my-leader-def
     :keymaps 'normal
 
+  ;; ** Global Keybindings
     "p" '(:keymap  projectile-command-map :wk "projectile")
     "g" 'magit-status
     "." 'treemacs
-  )
- 
-  ;; ** Global Keybindings
-  (my-leader-def
-    :keymaps 'normal
-    "a" 'org-agenda
-    "c" 'org-capture
     "," 'ivy-switch-buffer
-  )
+    "a" 'org-agenda
 
-  (my-leader-def
-    :keymaps 'normal
-    "c" 'compile)
+    "c" '(:ignore :wk "Compile")
+    "cc" 'compile
+    "cC" 'recompile
+    "cr" 'cmake-command-run
 
+    )
+  
   ;;magit
   (general-setq evil-search-module 'evil-search)
 )
-
-
-
