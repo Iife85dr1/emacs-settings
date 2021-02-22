@@ -132,5 +132,7 @@
 (load (concat user-emacs-directory "completion/company.el"))
 (load (concat user-emacs-directory "langs/lsp.el"))
 (load (concat user-emacs-directory "langs/rust.el"))
+(load (concat user-emacs-directory "langs/vue.el"))
+(load (concat user-emacs-directory "langs/prettier.el"))
 (load (concat user-emacs-directory "configs.el"))
 (load (concat user-emacs-directory "keybinds/general.el"))
