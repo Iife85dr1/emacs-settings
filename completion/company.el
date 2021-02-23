@@ -1,4 +1,6 @@
 (use-package company
- :ensure t
- :hook 
- (after-init . global-company-mode))
+  :ensure t 
+  :config
+  (setq company-minimum-prefix-length 1)
+  :hook 
+  (after-init . global-company-mode))

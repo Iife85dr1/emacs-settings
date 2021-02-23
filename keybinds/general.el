@@ -23,13 +23,16 @@
     "p" '(:keymap  projectile-command-map :wk "projectile")
     "g" 'magit-status
     "." 'find-file
-    "," 'ivy-switch-buffer
+    "," 'counsel-switch-buffer
     "a" 'org-agenda
 
     "c" '(:ignore :wk "Compile")
     "cc" 'compile
     "cC" 'recompile
     "cr" 'cmake-command-run
+
+    "f" '(:ignore :wf "files")
+    "fr" 'counsel-recentf
 
     )
   

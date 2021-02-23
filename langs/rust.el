@@ -3,8 +3,9 @@
   :mode ("\\.rs$" . rustic-mode)
 
   :init
-  (setq rustic-format-trigger 'on-save)
-  (setq buffer-save-without-query t)
+  (setq rustic-format-trigger 'on-save
+        buffer-save-without-query t
+        company-idle-delay 0.2)
   
   :config
   (my-local-leader

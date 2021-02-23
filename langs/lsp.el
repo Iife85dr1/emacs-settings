@@ -1,7 +1,11 @@
 (use-package flycheck
   :ensure t
   :init
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  :config
+  (setq flycheck-indication-mode 'right-fringe)
+  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+      [16 48 112 240 112 48 16] nil nil 'center))
 
 (use-package lsp-mode
   :init
@@ -18,7 +22,10 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :config
   (setq lsp-print-performance t
-        lsp-enable-imenu t)
+        lsp-enable-imenu t
+        lsp-headerline-breadcrumb-enable t
+        lsp-idle-delay 0.1 
+        )
   :commands lsp)
 
 
@@ -126,10 +133,18 @@
   (lsp-treemacs-sync-mode 1))
 
 
+(use-package lsp-haskell
+  :ensure t
+  :config
+  (add-hook 'haskell-mode-hook #'lsp)
+  (add-hook 'haskell-literate-mode-hook #'lsp)
+  )
 
 (use-package lsp-python-ms
   :ensure t
   :init (setq lsp-python-ms-auto-install-server t)
+  :config
+  (setq company-idle-delay 0.2)
   :hook (python-mode . (lambda ()
                           (require 'lsp-python-ms)
                           (lsp))))  ; or lsp-deferred
