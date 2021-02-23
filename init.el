@@ -86,7 +86,9 @@
 (use-package magit
   :ensure t
   :config
-(setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+  (setq magit-completing-read-function 'magit-ido-completing-read)
+  (setq magit-diff-refine-hunk t)
   )
 
 (use-package projectile

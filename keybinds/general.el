@@ -31,6 +31,9 @@
     "cC" 'recompile
     "cr" 'cmake-command-run
 
+    "f" '(:ignore :wf "files")
+    "fr" 'counsel-recentf
+
     )
   
   ;;magit
