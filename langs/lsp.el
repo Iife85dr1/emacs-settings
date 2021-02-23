@@ -22,9 +22,8 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :config
   (setq lsp-print-performance t
-        lsp-enable-imenu t
         lsp-headerline-breadcrumb-enable t
-        lsp-idle-delay 0.1 
+        lsp-idle-delay 0.1
         )
   :commands lsp)
 
@@ -140,13 +139,14 @@
   (add-hook 'haskell-literate-mode-hook #'lsp)
   )
 
-(use-package lsp-python-ms
+(use-package lsp-pyright
   :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
+  ; :init (setq lsp-python-ms-auto-install-server t)
   :config
-  (setq company-idle-delay 0.2)
+  (setq company-idle-delay 1
+        lsp-pyright-diagnostic-mode 1)
   :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
+                          (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
 
 (use-package cmake-mode
