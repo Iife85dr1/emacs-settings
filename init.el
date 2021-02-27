@@ -1,7 +1,7 @@
 (setq inhibit-startup-message t)
 (setq-default indent-tabs-mode nil)
 
-(set-frame-font "JetBrains Mono Medium 25" nil t)
+(set-frame-font "JetBrains Mono Medium 22" nil t)
 ;; Disable tool bar, menu bar, scroll bar.
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -62,7 +62,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-material t))
+  (load-theme 'doom-horizon t))
 
 ;; optional if you want which-key integration
 (use-package which-key

@@ -13,9 +13,11 @@
     :keymaps 'rustic-mode-map
     :wk "Rutic"
   
-    "b" '(:ignore )
+    "b" '(:ignore :wk "cargo build")
     "bb" 'rustic-cargo-build
-    "br" 'rustic-cargo-run
     "bc" 'rustic-cargo-clean
+
+    "r" 'rustic-cargo-run
+    "t" 'rustic-cargo-test
   )
 )

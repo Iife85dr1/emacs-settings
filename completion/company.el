@@ -27,6 +27,7 @@
         company-dabbrev-other-buffers nil
         company-dabbrev-ignore-case nil
         company-dabbrev-downcase nil
+        company-idle-delay 1
         )
   :config
   (add-hook 'company-mode-hook #'evil-normalize-keymaps)
