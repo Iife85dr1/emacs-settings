@@ -13,18 +13,21 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (python-mode . lsp)
-         (c++-mode . lsp)
+         ; (c++-mode . lsp)
+         (c++-mode . (lambda()
+                       (add-hook 'before-save-hook #'lsp-format-buffer t t)
+                       (lsp)))
          (vue-mode . lsp)
          (web-mode . lsp)
          (rustic-mode . lsp)
          (ruby-mode . lsp)
+         (before-save-hook . lsp-format-buffer)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :config
   (setq lsp-print-performance t
-        lsp-enable-imenu t
         lsp-headerline-breadcrumb-enable t
-        lsp-idle-delay 0.1 
+        lsp-idle-delay 0.1
         )
   :commands lsp)
 
@@ -140,13 +143,16 @@
   (add-hook 'haskell-literate-mode-hook #'lsp)
   )
 
-(use-package lsp-python-ms
+(use-package lsp-pyright
   :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
+  :init (setq lsp-pyright-venv-path (concat default-directory "venv/"))
   :config
-  (setq company-idle-delay 0.2)
+  (setq lsp-pyright-diagnostic-mode 1
+        lsp-enable-file-watchers  nil
+        lsp-file-watch-threshold 100
+        )
   :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
+                          (require 'lsp-pyright)
                           (lsp))))  ; or lsp-deferred
 
 (use-package cmake-mode
