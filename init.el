@@ -81,6 +81,7 @@
  :config
  (evil-mode 1)
  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+ (define-key evil-normal-state-map (kbd "TAB") 'counsel-switch-buffer)
  (evil-set-undo-system 'undo-tree))
 
 (use-package magit
