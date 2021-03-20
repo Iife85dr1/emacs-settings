@@ -16,10 +16,12 @@
          ; (c++-mode . lsp)
          (c++-mode . (lambda()
                        (add-hook 'before-save-hook #'lsp-format-buffer t t)
+                       (setq compile-command "cmake --build Debug/ -j 6")
                        (lsp)))
          (vue-mode . lsp)
          (web-mode . lsp)
          (rustic-mode . lsp)
+         (cmake-mode . lsp)
          (ruby-mode . lsp)
          (before-save-hook . lsp-format-buffer)
          ;; if you want which-key integration
@@ -28,6 +30,9 @@
   (setq lsp-print-performance t
         lsp-headerline-breadcrumb-enable t
         lsp-idle-delay 0.1
+        lsp-prefer-capf t
+        lsp-completion-provider :capf
+        lsp-completion-enable t
         )
   :commands lsp)
 
@@ -41,6 +46,10 @@
         lsp-ui-sideline-show-code-actions t
         lsp-ui-sideline-ignore-duplicate t
         lsp-ui-sideline-show-code-actions nil
+
+        lsp-enable-snippet t
+
+        lsp-log-io nil
 
         lsp-ui-doc-enable nil
         lsp-ui-doc-delay 0

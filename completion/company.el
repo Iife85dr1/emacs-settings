@@ -12,7 +12,7 @@
   :commands company-complete-common company-manual-begin company-grab-line
   :hook (after-init . global-company-mode)
   :init
-  (setq company-minimum-prefix-length 2
+  (setq company-minimum-prefix-length 0
         company-require-match 'never
         company-global-modes '(not erc-mode message-mode help-mode gud-mode)
         company-frontends
@@ -44,7 +44,6 @@
             (company-abort))))
   )
 
-
 (use-package company-box
   :ensure t
   :hook (company-mode . company-box-mode)
@@ -54,3 +53,12 @@
         company-box-icons-alist 'company-box-icons-all-the-icons
         )
   )
+
+(use-package  yasnippet
+ :ensure t
+ :config 
+ (yas-global-mode 1)
+ (setq lsp-enable-snippet t))
+
+(use-package yasnippet-snippets
+ :ensure t)

@@ -2,12 +2,17 @@
   :ensure t
   :mode ("\\.rs$" . rustic-mode)
 
+  :hook
+  (before-save . lsp-format-buffer)
   :init
-  (setq rustic-format-trigger 'on-save
+  (setq rustic-lsp-server 'rust-analyzer
         buffer-save-without-query t
-        company-idle-delay 0.2)
+        company-idle-delay 0.1)
+  (push 'rustic-clippy flycheck-checkers)
   
   :config
+  (setq compile-command "cargo build")
+
   (my-local-leader
     :states  '(normal emacs)
     :keymaps 'rustic-mode-map

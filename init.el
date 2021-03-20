@@ -35,7 +35,12 @@
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/")
+             t)
+(add-to-list 'package-archives
+             '("org" . "https://orgmode.org/elpa/")
+             t)
+
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -63,6 +68,17 @@
   :ensure t
   :config
   (load-theme 'doom-horizon t))
+
+
+(use-package tree-sitter
+	:ensure t
+	:config
+	(global-tree-sitter-mode)
+	(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+	)
+
+(use-package tree-sitter-langs
+	:ensure t)
 
 ;; optional if you want which-key integration
 (use-package which-key
@@ -133,6 +149,7 @@
 
 (load (concat user-emacs-directory "completion/ivy.el"))
 (load (concat user-emacs-directory "completion/company.el"))
+;; (load (concat user-emacs-directory "completion/company-cmake.el"))
 (load (concat user-emacs-directory "langs/lsp.el"))
 (load (concat user-emacs-directory "langs/rust.el"))
 (load (concat user-emacs-directory "langs/vue.el"))
