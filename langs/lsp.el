@@ -23,10 +23,13 @@
          (rustic-mode . lsp)
          (cmake-mode . lsp)
          (ruby-mode . lsp)
+		 (go-mode . lsp)
+         (yaml-mode . lsp)
          (before-save-hook . lsp-format-buffer)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :config
+	(add-hook 'go-mode-hook #'lsp-deferred)
   (setq lsp-print-performance t
         lsp-headerline-breadcrumb-enable t
         lsp-idle-delay 0.1

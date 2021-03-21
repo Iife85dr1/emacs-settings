@@ -12,7 +12,7 @@
   :commands company-complete-common company-manual-begin company-grab-line
   :hook (after-init . global-company-mode)
   :init
-  (setq company-minimum-prefix-length 0
+  (setq company-minimum-prefix-length 1
         company-require-match 'never
         company-global-modes '(not erc-mode message-mode help-mode gud-mode)
         company-frontends

@@ -80,6 +80,9 @@
 (use-package tree-sitter-langs
 	:ensure t)
 
+(use-package yaml-mode
+	:ensure t)
+
 ;; optional if you want which-key integration
 (use-package which-key
     :ensure t
