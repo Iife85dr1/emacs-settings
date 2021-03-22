@@ -70,6 +70,9 @@
   (load-theme 'doom-horizon t))
 
 
+(use-package powershell
+ :ensure t)
+
 (use-package tree-sitter
 	:ensure t
 	:config

@@ -25,6 +25,7 @@
          (ruby-mode . lsp)
 		 (go-mode . lsp)
          (yaml-mode . lsp)
+		 (powershell-mode . lsp)
          (before-save-hook . lsp-format-buffer)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
